@@ -41,7 +41,9 @@ if (START == NULL || nim <= START->noMhs)
         cout << "\nDuplicate number not allowed" << endl;
         return;
     }
-    
+    // step 4: newNode.next = START
+    newNode->next = START;
+
 }
 
 }
