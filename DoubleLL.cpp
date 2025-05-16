@@ -48,6 +48,12 @@ if (START == NULL || nim <= START->noMhs)
     if (START != NULL)
     START->prev = newNode;
 
+    //step 6; newnode.prev = NULL
+    newNode->prev = NULL;
+
+    //step 7: START = newNode
+    START = newNode;
+    return;
 }
 
 }
