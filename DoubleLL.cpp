@@ -92,6 +92,36 @@ cin >> rollNo;
 
 Node *current = START;
 
+//step 1: Traverse the list to find the node
+while (current != NULL && current->noMhs != rollNo)
+current = current->next;
+
+if (current == NULL)
+{
+    cout <<"Record not found" << endl;
+    return;
+}
+
+//step 2: If node is at beginning
+if (current == START)
+{
+    START = current->next; //step 2a START = START.NEXT
+    if (START != NULL)
+    START->prev = NULL; //step 2b START.prev = NULL
+}
+else
+{
+    //step 3: Link previous  node to next of current
+    current->prev->next = current-next;
+
+    //step 4: if current is not the last node
+    if (current->next != NULL)
+    current ->next->prev = current->prev;
+
+    //step 5: Delete the Node
+    delete current;
+    cout << "Record with roll number  " << rollNo << " Deleted" << endl;
+}
 
 }
 
