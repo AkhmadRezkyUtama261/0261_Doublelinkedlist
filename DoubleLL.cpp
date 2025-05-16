@@ -44,6 +44,10 @@ if (START == NULL || nim <= START->noMhs)
     // step 4: newNode.next = START
     newNode->next = START;
 
+    //step 5: STARt.prev = newNode (if START exists)
+    if (START != NULL)
+    START->prev = newNode;
+
 }
 
 }
